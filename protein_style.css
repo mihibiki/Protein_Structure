@@ -109,7 +109,7 @@ img {
 }
 
 #home{
-    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png);
+    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png?raw=true);
     min-height: 100vh;
 }
 #home .page-title{
@@ -119,7 +119,7 @@ img {
 
 /*index*/
 #index{
-    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png);
+    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png?raw=true);
     height: 450px;
     margin-bottom: 40px;
 }
@@ -295,7 +295,7 @@ article p{
 
 /*Structure*/
 #Structure{
-    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png);
+    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png?raw=true);
     height: 450px;
     margin-bottom: 40px;
 }
@@ -474,7 +474,7 @@ article p{
 /*AlphaFold2*/
 
 #AlphaFold2{
-    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png);
+    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png?raw=true);
     height: 300px;
     margin-bottom: 30px;
 }
@@ -660,7 +660,7 @@ article p{
 /*AlphaFold3*/
 
 #AlphaFold3{
-    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png);
+    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png?raw=true);
     height: 300px;
     margin-bottom: 30px;
 }
@@ -842,7 +842,7 @@ article p:link{
 /*PyMOL*/
 
 #PyMOL{
-    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png);
+    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png?raw=true);
     height: 300px;
     margin-bottom: 30px;
 }
@@ -1018,7 +1018,7 @@ article p{
 
 /*CAVER*/
 #CAVER{
-    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png);
+    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png?raw=true);
     height: 300px;
     margin-bottom: 30px;
 }
@@ -1194,7 +1194,7 @@ article p{
 
 /*MVD*/
 #MVD{
-    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png);
+    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png?raw=true);
     height: 300px;
     margin-bottom: 30px;
 }
@@ -1371,7 +1371,7 @@ article p{
 
 /*AutoDockVina*/
 #AutoDockVina{
-    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png);
+    background-image: url(https://github.com/mihibiki/Protein_Structure/blob/main/images/top_protein3.png?raw=true);
     height: 300px;
     margin-bottom: 30px;
 }
