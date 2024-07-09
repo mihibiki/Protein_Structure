@@ -1,0 +1,1369 @@
+@charset "UTF-8";
+
+/* 共通部分
+-----------------------------------------*/
+
+html {
+    font-size: 100%;
+}
+
+body{
+    font-family: "Yu Gothic Medium", "遊ゴシック Medium", YuGothic, "遊ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color: black;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+
+/*Header
+----------------------------------------*/
+
+.logo {
+    width: 90px;
+    margin-top:14px;
+}
+
+.main-name-nav{
+    display: flex;
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    margin-top: 30px;
+    list-style: none;
+}
+
+.main-name-nav li{
+    margin-right: 800px;
+}
+
+.main-name-nav {
+    color: #2b0c4f;
+}
+
+.main-nav{
+    display:flex;
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    margin-top: 10px;
+    list-style: none;
+}
+.main-nav li{
+    margin-left: 36px;
+}
+.margin-nav a{
+    color: #8976a1;
+}
+
+.main-nav a:link{
+    color: #281a65;
+}
+
+.main-nav a:visited{
+    color: blue;
+}
+
+.main-nav a:hover{
+    color: #413d45;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/*Home
+---------------------------------------------*/
+
+.home-content{
+    text-align: center;
+    margin-top: 10%;
+}
+.home-content p{
+    font-size: 1.1rem;
+    margin: 10px 0 42px;
+}
+
+/*見出し*/
+.page-title{
+    font-size: 4rem;
+    font-family: 'Philosopher', serif;
+    /*text-transform: uppercase;*/
+    font-weight: normal;
+    text-shadow:1px 1px 0 #63586a; 
+}
+
+/*背景画像*/
+.big-bg{
+    background-size: cover;
+    background-position: center top;
+}
+
+#home{
+    background-image: url(../images/top_protein3.png);
+    min-height: 100vh;
+}
+#home .page-title{
+    text-transform: none;
+}
+
+
+/*Structure*/
+#Structure{
+    background-image: url(../images/top_protein3.png);
+    height: 450px;
+    margin-bottom: 40px;
+}
+#Structure .page-title{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*footer*/
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p{
+    color: #fff;
+    font-size: 0.88rem;
+}
+
+/*main*/
+article{
+    width: 70%;
+}
+
+
+h3 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+h4 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+
+/*side*/
+
+aside{
+    width: 25%;
+}
+
+.Structure-contents{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+.post-info{
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-title{
+    font-family: "Yu Gothic Medium";
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sub-title{
+    font-size: 1.2rem;
+    border-bottom: 2px #dbedf0 solid;
+    font-weight: normal;
+    padding: 0 50px 10px;
+}
+
+input {
+    display: none;
+}
+
+.menu ul {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0 50px;
+    background :white;
+    list-style: none;
+}
+
+/*バー部分*/
+.menu label {
+    font-size: 0.9rem;
+    cursor :pointer;
+    display: block;
+    text-decoration: none;
+    color: #260657;
+    line-height: 1.7;
+    position: relative;
+    margin: 10 10 10 100px;
+    padding: 0 50px 10px;
+    background-color: #fff;
+    border-bottom: 1px #dbedf0 solid;
+  }
+
+
+.menu li {
+    height: 0;
+    overflow-y: hidden;
+    transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+    -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -o-transition: padding-bottom 0.5s, padding-top 0.5s;
+  }
+
+  #menu_bar01:checked ~ #links01 li,
+  #menu_bar02:checked ~ #links02 li,
+  #menu_bar03:checked ~ #links03 li,
+  #menu_bar04:checked ~ #links04 li,
+  #menu_bar05:checked ~ #links05 li,
+  #menu_bar06:checked ~ #links06 li {
+    height: auto; /*開いたときに表示されるliの高さ*/
+    opacity: 1;
+    background: white;
+    padding: 5px;
+    border-bottom: 0.8px #dbedf0 solid;
+  }
+
+   /*開いたときの下の余白*/
+  #menu_bar01:checked ~ #links01 li:last-child,
+  #menu_bar02:checked ~ #links02 li:last-child,
+  #menu_bar03:checked ~ #links03 li:last-child,
+  #menu_bar04:checked ~ #links04 li:last-child,
+  #menu_bar05:checked ~ #links05 li:last-child,
+  #menu_bar06:checked ~ #links06 li:last-child {
+    margin-bottom: 20px;
+  }
+  /*閉じた状態の矢印描画*/
+  .menu label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position:absolute;
+    right: 2%;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+  }
+  /*開いた状態の矢印描画*/
+  .menu input[type=checkbox]:checked + label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position:absolute;
+    right: 2%;
+    top: 7%;
+    bottom: 0;
+    margin: auto;
+  }
+
+
+article p{
+    color: black;
+}
+
+
+
+
+/*AlphaFold2*/
+
+#AlphaFold2{
+    background-image: url(../images/top_protein3.png);
+    height: 300px;
+    margin-bottom: 30px;
+}
+#AlphaFold2 .page-title{
+    text-align: center;
+}
+
+/*footer*/
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p{
+    color: #fff;
+    font-size: 0.88rem;
+}
+
+
+/*main*/
+article{
+    width: 70%;
+}
+
+h2 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+
+h3 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 0.7rem;
+}
+
+h4 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+
+/*side*/
+
+aside{
+    width: 25%;
+}
+
+.AlphaFold2-contents{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+.post-info{
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-title{
+    font-family: "Yu Gothic Medium";
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sub-title{
+    font-size: 1.2rem;
+    border-bottom: 2px #dbedf0 solid;
+    font-weight: normal;
+    padding: 0 50px 10px;
+}
+
+input {
+    display: none;
+}
+
+.menu ul {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0 50px;
+    background :white;
+    list-style: none;
+}
+
+/*バー部分*/
+.menu label {
+    font-size: 0.9rem;
+    cursor :pointer;
+    display: block;
+    text-decoration: none;
+    color: #260657;
+    line-height: 1.7;
+    position: relative;
+    margin: 10 10 10 100px;
+    padding: 0 50px 10px;
+    background-color: #fff;
+    border-bottom: 1px #dbedf0 solid;
+  }
+
+
+.menu li {
+    height: 0;
+    overflow-y: hidden;
+    transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+    -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -o-transition: padding-bottom 0.5s, padding-top 0.5s;
+  }
+
+  #menu_bar01:checked ~ #links01 li,
+  #menu_bar02:checked ~ #links02 li,
+  #menu_bar03:checked ~ #links03 li,
+  #menu_bar04:checked ~ #links04 li,
+  #menu_bar05:checked ~ #links05 li,
+  #menu_bar06:checked ~ #links06 li {
+    height: auto; /*開いたときに表示されるliの高さ*/
+    opacity: 1;
+    background: white;
+    padding: 5px;
+    border-bottom: 0.8px #dbedf0 solid;
+  }
+
+   /*開いたときの下の余白*/
+  #menu_bar01:checked ~ #links01 li:last-child,
+  #menu_bar02:checked ~ #links02 li:last-child,
+  #menu_bar03:checked ~ #links03 li:last-child,
+  #menu_bar04:checked ~ #links04 li:last-child,
+  #menu_bar05:checked ~ #links05 li:last-child,
+  #menu_bar06:checked ~ #links06 li:last-child {
+    margin-bottom: 20px;
+  }
+  /*閉じた状態の矢印描画*/
+  .menu label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position:absolute;
+    right: 2%;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+  }
+  /*開いた状態の矢印描画*/
+  .menu input[type=checkbox]:checked + label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position:absolute;
+    right: 2%;
+    top: 7%;
+    bottom: 0;
+    margin: auto;
+  }
+
+
+article p{
+    color: black;
+    font-size: 15px;
+}
+
+
+
+/*AlphaFold3*/
+
+#AlphaFold3{
+    background-image: url(../images/top_protein3.png);
+    height: 300px;
+    margin-bottom: 30px;
+}
+#AlphaFold3 .page-title{
+    text-align: center;
+}
+
+/*footer*/
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p{
+    color: #fff;
+    font-size: 0.88rem;
+}
+
+
+/*main*/
+article{
+    width: 70%;
+}
+
+
+h3 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+h4 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+
+/*side*/
+
+aside{
+    width: 25%;
+}
+
+.AlphaFold3-contents{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+.post-info{
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-title{
+    font-family: "Yu Gothic Medium";
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sub-title{
+    font-size: 1.2rem;
+    border-bottom: 2px #dbedf0 solid;
+    font-weight: normal;
+    padding: 0 50px 10px;
+}
+
+input {
+    display: none;
+}
+
+.menu ul {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0 50px;
+    background :white;
+    list-style: none;
+}
+
+/*バー部分*/
+.menu label {
+    font-size: 0.9rem;
+    cursor :pointer;
+    display: block;
+    text-decoration: none;
+    color: #260657;
+    line-height: 1.7;
+    position: relative;
+    margin: 10 10 10 100px;
+    padding: 0 50px 10px;
+    background-color: #fff;
+    border-bottom: 1px #dbedf0 solid;
+  }
+
+
+.menu li {
+    height: 0;
+    overflow-y: hidden;
+    transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+    -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -o-transition: padding-bottom 0.5s, padding-top 0.5s;
+  }
+
+  #menu_bar01:checked ~ #links01 li,
+  #menu_bar02:checked ~ #links02 li,
+  #menu_bar03:checked ~ #links03 li,
+  #menu_bar04:checked ~ #links04 li,
+  #menu_bar05:checked ~ #links05 li,
+  #menu_bar06:checked ~ #links06 li {
+    height: auto; /*開いたときに表示されるliの高さ*/
+    opacity: 1;
+    background: white;
+    padding: 5px;
+    border-bottom: 0.8px #dbedf0 solid;
+  }
+
+   /*開いたときの下の余白*/
+  #menu_bar01:checked ~ #links01 li:last-child,
+  #menu_bar02:checked ~ #links02 li:last-child,
+  #menu_bar03:checked ~ #links03 li:last-child,
+  #menu_bar04:checked ~ #links04 li:last-child,
+  #menu_bar05:checked ~ #links05 li:last-child,
+  #menu_bar06:checked ~ #links06 li:last-child {
+    margin-bottom: 20px;
+  }
+  /*閉じた状態の矢印描画*/
+  .menu label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position:absolute;
+    right: 2%;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+  }
+  /*開いた状態の矢印描画*/
+  .menu input[type=checkbox]:checked + label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position:absolute;
+    right: 2%;
+    top: 7%;
+    bottom: 0;
+    margin: auto;
+  }
+
+
+article p{
+    color: black;
+}
+
+article p:link{
+    color: blue;
+}
+
+
+
+/*PyMOL*/
+
+#PyMOL{
+    background-image: url(../images/top_protein3.png);
+    height: 300px;
+    margin-bottom: 30px;
+}
+#PyMOL .page-title{
+    text-align: center;
+}
+
+/*footer*/
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p{
+    color: #fff;
+    font-size: 0.88rem;
+}
+
+
+/*main*/
+article{
+    width: 70%;
+}
+
+
+h3 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+h4 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+
+/*side*/
+
+aside{
+    width: 25%;
+}
+
+.PyMOL-contents{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+.post-info{
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-title{
+    font-family: "Yu Gothic Medium";
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sub-title{
+    font-size: 1.2rem;
+    border-bottom: 2px #dbedf0 solid;
+    font-weight: normal;
+    padding: 0 50px 10px;
+}
+
+input {
+    display: none;
+}
+
+.menu ul {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0 50px;
+    background :white;
+    list-style: none;
+}
+
+/*バー部分*/
+.menu label {
+    font-size: 0.9rem;
+    cursor :pointer;
+    display: block;
+    text-decoration: none;
+    color: #260657;
+    line-height: 1.7;
+    position: relative;
+    margin: 10 10 10 100px;
+    padding: 0 50px 10px;
+    background-color: #fff;
+    border-bottom: 1px #dbedf0 solid;
+  }
+
+
+.menu li {
+    height: 0;
+    overflow-y: hidden;
+    transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+    -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -o-transition: padding-bottom 0.5s, padding-top 0.5s;
+  }
+
+  #menu_bar01:checked ~ #links01 li,
+  #menu_bar02:checked ~ #links02 li,
+  #menu_bar03:checked ~ #links03 li,
+  #menu_bar04:checked ~ #links04 li,
+  #menu_bar05:checked ~ #links05 li,
+  #menu_bar06:checked ~ #links06 li {
+    height: auto; /*開いたときに表示されるliの高さ*/
+    opacity: 1;
+    background: white;
+    padding: 5px;
+    border-bottom: 0.8px #dbedf0 solid;
+  }
+
+   /*開いたときの下の余白*/
+  #menu_bar01:checked ~ #links01 li:last-child,
+  #menu_bar02:checked ~ #links02 li:last-child,
+  #menu_bar03:checked ~ #links03 li:last-child,
+  #menu_bar04:checked ~ #links04 li:last-child,
+  #menu_bar05:checked ~ #links05 li:last-child,
+  #menu_bar06:checked ~ #links06 li:last-child {
+    margin-bottom: 20px;
+  }
+  /*閉じた状態の矢印描画*/
+  .menu label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position:absolute;
+    right: 2%;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+  }
+  /*開いた状態の矢印描画*/
+  .menu input[type=checkbox]:checked + label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position:absolute;
+    right: 2%;
+    top: 7%;
+    bottom: 0;
+    margin: auto;
+  }
+
+
+article p{
+    color: black;
+}
+
+
+/*CAVER*/
+#CAVER{
+    background-image: url(../images/top_protein3.png);
+    height: 300px;
+    margin-bottom: 30px;
+}
+#CAVER .page-title{
+    text-align: center;
+}
+
+/*footer*/
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p{
+    color: #fff;
+    font-size: 0.88rem;
+}
+
+
+/*main*/
+article{
+    width: 70%;
+}
+
+
+h3 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+h4 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+
+/*side*/
+
+aside{
+    width: 25%;
+}
+
+.CAVER-contents{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+.post-info{
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-title{
+    font-family: "Yu Gothic Medium";
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sub-title{
+    font-size: 1.2rem;
+    border-bottom: 2px #dbedf0 solid;
+    font-weight: normal;
+    padding: 0 50px 10px;
+}
+
+input {
+    display: none;
+}
+
+.menu ul {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0 50px;
+    background :white;
+    list-style: none;
+}
+
+/*バー部分*/
+.menu label {
+    font-size: 0.9rem;
+    cursor :pointer;
+    display: block;
+    text-decoration: none;
+    color: #260657;
+    line-height: 1.7;
+    position: relative;
+    margin: 10 10 10 100px;
+    padding: 0 50px 10px;
+    background-color: #fff;
+    border-bottom: 1px #dbedf0 solid;
+  }
+
+
+.menu li {
+    height: 0;
+    overflow-y: hidden;
+    transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+    -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -o-transition: padding-bottom 0.5s, padding-top 0.5s;
+  }
+
+  #menu_bar01:checked ~ #links01 li,
+  #menu_bar02:checked ~ #links02 li,
+  #menu_bar03:checked ~ #links03 li,
+  #menu_bar04:checked ~ #links04 li,
+  #menu_bar05:checked ~ #links05 li,
+  #menu_bar06:checked ~ #links06 li {
+    height: auto; /*開いたときに表示されるliの高さ*/
+    opacity: 1;
+    background: white;
+    padding: 5px;
+    border-bottom: 0.8px #dbedf0 solid;
+  }
+
+   /*開いたときの下の余白*/
+  #menu_bar01:checked ~ #links01 li:last-child,
+  #menu_bar02:checked ~ #links02 li:last-child,
+  #menu_bar03:checked ~ #links03 li:last-child,
+  #menu_bar04:checked ~ #links04 li:last-child,
+  #menu_bar05:checked ~ #links05 li:last-child,
+  #menu_bar06:checked ~ #links06 li:last-child {
+    margin-bottom: 20px;
+  }
+  /*閉じた状態の矢印描画*/
+  .menu label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position:absolute;
+    right: 2%;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+  }
+  /*開いた状態の矢印描画*/
+  .menu input[type=checkbox]:checked + label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position:absolute;
+    right: 2%;
+    top: 7%;
+    bottom: 0;
+    margin: auto;
+  }
+
+
+article p{
+    color: black;
+}
+
+
+/*MVD*/
+#MVD{
+    background-image: url(../images/top_protein3.png);
+    height: 300px;
+    margin-bottom: 30px;
+}
+#MVD .page-title{
+    text-align: center;
+}
+
+/*footer*/
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p{
+    color: #fff;
+    font-size: 0.88rem;
+}
+
+
+/*main*/
+article{
+    width: 70%;
+}
+
+
+h3 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+h4 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+
+/*side*/
+
+aside{
+    width: 25%;
+}
+
+.MVD-contents{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+.post-info{
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-title{
+    font-family: "Yu Gothic Medium";
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sub-title{
+    font-size: 1.2rem;
+    border-bottom: 2px #dbedf0 solid;
+    font-weight: normal;
+    padding: 0 50px 10px;
+}
+
+input {
+    display: none;
+}
+
+.menu ul {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0 50px;
+    background :white;
+    list-style: none;
+}
+
+/*バー部分*/
+.menu label {
+    font-size: 0.9rem;
+    cursor :pointer;
+    display: block;
+    text-decoration: none;
+    color: #260657;
+    line-height: 1.7;
+    position: relative;
+    margin: 10 10 10 100px;
+    padding: 0 50px 10px;
+    background-color: #fff;
+    border-bottom: 1px #dbedf0 solid;
+  }
+
+
+.menu li {
+    height: 0;
+    overflow-y: hidden;
+    transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+    -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -o-transition: padding-bottom 0.5s, padding-top 0.5s;
+  }
+
+  #menu_bar01:checked ~ #links01 li,
+  #menu_bar02:checked ~ #links02 li,
+  #menu_bar03:checked ~ #links03 li,
+  #menu_bar04:checked ~ #links04 li,
+  #menu_bar05:checked ~ #links05 li,
+  #menu_bar06:checked ~ #links06 li {
+    height: auto; /*開いたときに表示されるliの高さ*/
+    opacity: 1;
+    background: white;
+    padding: 5px;
+    border-bottom: 0.8px #dbedf0 solid;
+  }
+
+   /*開いたときの下の余白*/
+  #menu_bar01:checked ~ #links01 li:last-child,
+  #menu_bar02:checked ~ #links02 li:last-child,
+  #menu_bar03:checked ~ #links03 li:last-child,
+  #menu_bar04:checked ~ #links04 li:last-child,
+  #menu_bar05:checked ~ #links05 li:last-child,
+  #menu_bar06:checked ~ #links06 li:last-child {
+    margin-bottom: 20px;
+  }
+  /*閉じた状態の矢印描画*/
+  .menu label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position:absolute;
+    right: 2%;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+  }
+  /*開いた状態の矢印描画*/
+  .menu input[type=checkbox]:checked + label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position:absolute;
+    right: 2%;
+    top: 7%;
+    bottom: 0;
+    margin: auto;
+  }
+
+
+article p{
+    color: black;
+}
+
+
+
+/*AutoDockVina*/
+#AutoDockVina{
+    background-image: url(../images/top_protein3.png);
+    height: 300px;
+    margin-bottom: 30px;
+}
+#AutoDockVina .page-title{
+    text-align: center;
+}
+
+/*footer*/
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p{
+    color: #fff;
+    font-size: 0.88rem;
+}
+
+
+/*main*/
+article{
+    width: 70%;
+}
+
+
+h3 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+h4 {
+    padding: 10px 10px;
+    border-left: 3px solid #000;
+    background: #f4f4f4;
+    font-size: 1rem;
+}
+
+
+/*side*/
+
+aside{
+    width: 25%;
+}
+
+.AutoDockVina-contents{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+.post-info{
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-title{
+    font-family: "Yu Gothic Medium";
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sub-title{
+    font-size: 1.2rem;
+    border-bottom: 2px #dbedf0 solid;
+    font-weight: normal;
+    padding: 0 50px 10px;
+}
+
+input {
+    display: none;
+}
+
+.menu ul {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0 50px;
+    background :white;
+    list-style: none;
+}
+
+/*バー部分*/
+.menu label {
+    font-size: 0.9rem;
+    cursor :pointer;
+    display: block;
+    text-decoration: none;
+    color: #260657;
+    line-height: 1.7;
+    position: relative;
+    margin: 10 10 10 100px;
+    padding: 0 50px 10px;
+    background-color: #fff;
+    border-bottom: 1px #dbedf0 solid;
+  }
+
+
+.menu li {
+    height: 0;
+    overflow-y: hidden;
+    transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+    -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -o-transition: padding-bottom 0.5s, padding-top 0.5s;
+  }
+
+  #menu_bar01:checked ~ #links01 li,
+  #menu_bar02:checked ~ #links02 li,
+  #menu_bar03:checked ~ #links03 li,
+  #menu_bar04:checked ~ #links04 li,
+  #menu_bar05:checked ~ #links05 li,
+  #menu_bar06:checked ~ #links06 li {
+    height: auto; /*開いたときに表示されるliの高さ*/
+    opacity: 1;
+    background: white;
+    padding: 5px;
+    border-bottom: 0.8px #dbedf0 solid;
+  }
+
+   /*開いたときの下の余白*/
+  #menu_bar01:checked ~ #links01 li:last-child,
+  #menu_bar02:checked ~ #links02 li:last-child,
+  #menu_bar03:checked ~ #links03 li:last-child,
+  #menu_bar04:checked ~ #links04 li:last-child,
+  #menu_bar05:checked ~ #links05 li:last-child,
+  #menu_bar06:checked ~ #links06 li:last-child {
+    margin-bottom: 20px;
+  }
+  /*閉じた状態の矢印描画*/
+  .menu label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position:absolute;
+    right: 2%;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+  }
+  /*開いた状態の矢印描画*/
+  .menu input[type=checkbox]:checked + label:after{
+    content:"";
+    display:block;
+    width:8px;
+    height:8px;
+    border-top: #260657 2px solid;
+    border-right: #260657 2px solid;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position:absolute;
+    right: 2%;
+    top: 7%;
+    bottom: 0;
+    margin: auto;
+  }
+
+
+article p{
+    color: black;
+}
