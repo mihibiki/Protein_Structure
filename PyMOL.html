@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>牧野研OB石田 - 立体構造予測</title>
+        <meta name="description" content="立体構造予測等に関するツールについて">
+        <link rel="icon" type="image/png" href="images/protein_icon_1.png">
+
+    <!--CSS-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="css/protein_style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="PyMOL" class="big-bg">
+            <header class="page-header wrapper">
+                <h1><img class="logo" src="images/protein_icon.png" alt="牧野研OB石田"></a></h1>
+                    <ul class="main-name-nav">
+                        <li>牧野研OB石田</li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="wrapper">
+                <h1 class="page-title">PyMOL</h1>
+            </div><!--/.wrapper-->
+        </div><!-- /#PyMOL -->
+
+        
+        <div class="PyMOL-contents wrapper">
+            <article>
+                <header class="post-info">
+                    <h2 class="post-title">超便利な立体構造可視化ツール</h2>
+                </header>
+                <p>
+                    <a href="https://pymol.org/" target="_blank">PyMOL</a> は、AlphaFold などを使って
+                    作成したタンパク質立体構造を可視化できるソフトウェア。 様々な角度から立体構造を見ることが可能であり、美しい
+                    グラフィックも特徴である。<br>
+                    <br>
+                    オープンソース版とバイナリ版が用意されており、バイナリ版は <a href="https://pymol.org/" target="_blank">HP</a> から
+                    簡単にインストールできるが、アプリケーションを開くたびにライセンス認証を求められるわずらわしさがある。<br>
+                    オープンソース版は anaconda や homebrew を使ってインストールすることができ、ライセンス認証が
+                    永続的に不要である。<br>
+                    <br>
+                    mac の場合： <code>brew install pymol</code><br>
+                    <br>
+                    <br>
+                    一方で、オープンソース版では後述の PyMod プラグインがインストールできない（少なくとも私が mac で試したときはそうだった）など、
+                    不便な面もある模様。個人的には、普段使いとしてはオープンソース版を使用し、プラグインを使用するときはバイナリ版を
+                    使用するのがベスト。<br>
+                    <br>
+                
+                </p>
+                <header class="post-info">
+                    <h2 class="post-title">よく使うコマンド</h2>
+                </header>
+                <p>
+                   PyMOL を開くと、External GUI と Viewer の2画面が表示される。<br>
+                   Viewer 画面には読み込んだ立体構造が表示され、さらに右側のオブジェクトパネルで表示形式や表示項目の
+                   調整が可能である。<br>
+                   External GUI 画面では、コマンドラインによる操作ができる。<br>
+                   マウス操作とコマンドライン操作を組み合わせることで、より効果的な可視化やデータの出力が可能である。<br>
+                   <br>
+                   
+                   よく使う操作：<br>
+                   <br>
+                   ・オブジェクトパネル<br>
+                   <li><code>Show → cartoon/sticks etc.</code></li>（タンパク質の描画方法を指定。
+                   cartoon はリボン状の描画で、二次構造が分かりやすい。sticks はアミノ酸の種類や方向が視覚的によくわかる。その他、複数の描画方法 show から指定できる。）<br>
+                    <li><code>Display (or 右下) → Sequence</code></li>
+                    立体構造を表示しているタンパク質のアミノ酸配列を表示する。任意のアミノ酸や配列の一部を選択すると、立体構造上のどの部分に該当するか
+                    表示される。指定した部分のみ色を変えたり、描画方法を変えたりすることも可能。<br>
+                    <li><code>Action → align → structure name</code></li>
+                    表示している構造同士を重ね合わせる。重ね合わせの対象として同じタンパク質を指定すれば、複数タンパク質の重ね合わせも可能。
+                    （ただし RMSD value や aligned sequences は1対1のみ表示。）<br>
+                    <li><code>Action → preset → ligands (ligand sites)</code></li>
+                    （リガンドが立体構造上にある場合）リガンドと相互作用するアミノ酸サイトが表示される。<br>
+                    <br>
+                    ・コマンドライン<br>
+                    <li><code>align structure_name_1, structure_name_2, (object= a)</code></li>
+                    2つの構造を重ね合わせる操作。ただし1対1しかできない。<br>
+                    <li><code>super structure_name_1, structure_name_2, (object= a)</code></li>
+                    2つの構造を、立体構造をもとに重ね合わせる操作。ただし1対1しかできない。<br>
+                    <li><code>label location（アミノ酸をクリックすればわかる）, "AA name"</code></li>
+                    アミノ酸名を表示して画像を出力したいときなどに使える。<br>
+                    <li><code>set label_size, 20</code></li>
+                    ラベルのサイズを調整できる。他にもフォントの調節なども可。<br>
+                    <br>
+                    その他、様々な調整が可能。<a href="https://pymolwiki.org/index.php/Main_Page">PyMOLWiki</a> に
+                    世界中の人が情報を蓄積しているので、大抵のやりたい操作は調べれば出てくる。<br>
+                    <br>
+                </p>
+                <header class="post-info">
+                    <h2 class="post-title">絶対使うべき！ PyMOL プラグイン</h2>
+                </header>
+                <p>
+                    ・PyMod: タンパク質の Sequence Alignment、Multiple Structural Alignment、立体構造予測、構造間距離の算出など、
+                    タンパク質構造解析関係の一通りのことができちゃうツール。<a href="https://schubert.bio.uniroma1.it/downloads/PyMod_Users_Guide.pdf">マニュアル</a> が非常に充実しているので参照されたし。
+                    <br>
+                    <br>
+                    ・CAVER: チャネルを予測するツール。PyMOL プラグインとして用意されており、PyMOL 上で可視化しながら
+                    予測が可能なので便利…なのだが、Mac Desktop ではプラグインが使えず（チップの問題か？）<br>
+                    → やむなく <a href="CAVER.html">CAVER Analyst</a> を利用
+                   
+                </p>
+                    
+
+                    
+                </p>
+            </article>
+
+              
+            <aside>
+                <h5 class="sub-title"><a href="Structure.html">Home</a></h5>
+                <h5 class="sub-title">ツール</h5>
+                <div class="menu">
+                    <input type="checkbox" id="menu_bar01" />
+                    <label for="menu_bar01">立体構造予測</label>
+                    <ul id="links01">
+                        <li><a href="AlphaFold2.html">AlphaFold2</a></li>
+                        <li><a href="AlphaFold3.html">AlphaFold3</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar02" />
+                    <label for="menu_bar02">立体構造予測<br>(紹介のみ)</label>
+                    <ul id="links02">
+                        <li><a href="Modeller.html">Modeller</a></li>
+                        <li><a href="MolDock.html">MolDock</a></li>
+                        <li><a href="Swissplot.html">SwissPlot</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar03" />
+                    <label for="menu_bar03">立体構造可視化</label>
+                    <ul id="links03">
+                        <li><a href="PyMOL.html">PyMOL</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar04" />
+                    <label for="menu_bar04">ドッキング<br>with リガンド</label>
+                    <ul id="links04">
+                        <li><a href="MVD.html">MVD</a></li>
+                        <li><a href="AutoDockVina.html">AutoDock Vina</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar05" />
+                    <label for="menu_bar05">タンパク質複合体予測（紹介）</label>
+                    <ul id="links05">
+                        <li><a href="MegaDock.html">MEGADOCK</a></li>
+                        <li><a href="LightDock.html">LightDock</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar06" />
+                    <label for="menu_bar06">その他</label>
+                    <ul id="links06">
+                        <li><a href="CAVER.html">CAVER</a></li>
+                        <li><a href="pdb.html">PDB</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div><!--/.PyMOL-contents-->
+
+
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2024 Hibikibox</small></p>
+            </div>
+        </footer>
+
+    </body>
+
+
+</html>

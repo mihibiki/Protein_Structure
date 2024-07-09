@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>牧野研OB石田 - 立体構造予測</title>
+        <meta name="description" content="立体構造予測等に関するツールについて">
+        <link rel="icon" type="image/png" href="images/protein_icon_1.png">
+
+    <!--CSS-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="css/protein_style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="AlphaFold3" class="big-bg">
+            <header class="page-header wrapper">
+                <h1><img class="logo" src="images/protein_icon.png" alt="牧野研OB石田"></a></h1>
+                    <ul class="main-name-nav">
+                        <li>牧野研OB石田</li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="wrapper">
+                <h1 class="page-title">AlphaFold3</h1>
+            </div><!--/.wrapper-->
+        </div><!-- /#AlphaFold2 -->
+
+        
+        <div class="AlphaFold3-contents wrapper">
+            <article>
+                <header class="post-info">
+                    <h2 class="post-title">AlphaFold 最新バージョン "AlphaFold3"</h2>
+                </header>
+                <p>
+                    <a href="https://www.nature.com/articles/s41586-024-07487-w" target="_blank">AlphaFold3</a> は、
+                    従来の AlphaFold の強みであった高い精度でのタンパク質立体構造予測に加えて、
+                     DNA や RNA などの核酸、低分子リガンドなど様々な物質との複合体の予測を可能にした
+                    最新のタンパク質構造予測モデルである。<br>
+                    <br>
+                    学習方法の変化に伴い、新たに以下の予測が可能となった。<br>
+                    1. タンパク質-核酸複合体の立体構造予測<br>
+                    2. タンパク質-低分子リガンド複合体の立体構造予測<br>
+                    3. 共有結合による修飾や糖鎖修飾、非標準アミノ酸などを含むタンパク質の立体構造予測<br>
+                    <br>
+                    論文によれば、タンパク質-低分子リガンド複合体の予測ではタンパク質の配列とリガンド構造式の情報のみから、
+                    通常の（立体構造情報を使う）ドッキングシミュレーションよりも高い予測精度を示した
+                    （PoseBusters ベンチマークを用いた評価）。<br>
+                    また、核酸構造予測では、Alchemy_RNA2 には劣ったものの、かなり高精度の予測が可能であるらしい。<br>
+                    <br>
+                </p>
+                <header class="post-info">
+                    <h2 class="post-title">AlphaFold3 使い方</h2>
+                </header>
+                <p>
+                    AlphaFold3 の使い方を説明する。<br>
+                    <br>
+                    [1] <a href="https://golgi.sandbox.google.com/about" target="_blank">AlphaFold3 サーバー</a>にアクセスする。<br>
+                    [2] Google Account でログインする。<br>
+                    [3] "+ Add entry" より入力欄を表示し、タンパク質のアミノ酸配列や核酸の塩基配列を入力する。
+                    NCBI からのコピーアンドペーストでは余計な改行が入っているので注意。金属イオンや ATP などの小分子リガンドは、すでに
+                    登録されているものから選ぶことができる。<br>
+                    [4] "Continue and preview job" → "Confirm and submit job" より実行。job の履歴は下の History 欄に表示・保存される。<br>
+                    [5] 予測が終了したら、History 欄の job をクリック（500AA 以下の短いものなら10分もかからず超高速で終わる。1500AA程度でも
+                    問題なく、時間は30~40分ほどかかった。）<br>
+                    [6] 画面の上の方に予想された立体構造とその信頼性が示される。<br>
+                    より詳細に構造を見たい場合には、Download より zip ファイルをダウンロードすれば、
+                    <a href="PyMOL.html">PyMOL</a> で可視化することができる（CIF ファイル）。<br>
+                    他のドッキングツールや立体構造解析ツールに立体構造を用いたい場合も同様。<br>
+                    <br>
+                </p>
+                <header class="post-info">
+                    <h2 class="post-title">使ってみた感想</h2>
+                </header>
+                <p>
+                    AlphaFold2 よりもサーバーが整備されて使いやすい印象を受けた。<br>
+                    また、核酸や低分子リガンドとの予測を AF3 のみで行えるというのは非常に画期的だと思う。<br>
+                    自分の研究で対象としていたタンパク質や共因子である Heme とのドッキングを AF3 でも試してみたが、
+                    専用のドッキングシミュレーションソフトウェアと遜色ない精度であった。<br>
+                    <br>
+                    現時点では低分子リガンドとしてサーバーに用意されている分子の種類がメジャーなものに限られているため、
+                    ドッキングシミュレーションを行うときは他のツールとの併用が必要となると思うが、今後のアップデートで改善
+                    される可能性は高いと思われる。<br>
+                    <br>
+                    現時点では、タンパク質-タンパク質の複合体予測はできなさそう。<br>
+                    （試したが、それぞれの立体構造が予測されるのみだった。AlphaFold2_complex のようにリンカーでつなげば予測されるのか？）
+                    
+                </p>
+                    
+
+                    
+                </p>
+            </article>
+
+              
+            <aside>
+                <h5 class="sub-title"><a href="Structure.html">Home</a></h5>
+                <h5 class="sub-title">ツール</h5>
+                <div class="menu">
+                    <input type="checkbox" id="menu_bar01" />
+                    <label for="menu_bar01">立体構造予測</label>
+                    <ul id="links01">
+                        <li><a href="AlphaFold2.html">AlphaFold2</a></li>
+                        <li><a href="AlphaFold3.html">AlphaFold3</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar02" />
+                    <label for="menu_bar02">立体構造予測<br>(紹介のみ)</label>
+                    <ul id="links02">
+                        <li><a href="Modeller.html">Modeller</a></li>
+                        <li><a href="MolDock.html">MolDock</a></li>
+                        <li><a href="Swissplot.html">SwissPlot</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar03" />
+                    <label for="menu_bar03">立体構造可視化</label>
+                    <ul id="links03">
+                        <li><a href="PyMOL.html">PyMOL</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar04" />
+                    <label for="menu_bar04">ドッキング<br>with リガンド</label>
+                    <ul id="links04">
+                        <li><a href="MVD.html">MVD</a></li>
+                        <li><a href="AutoDockVina.html">AutoDock Vina</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar05" />
+                    <label for="menu_bar05">タンパク質複合体予測（紹介）</label>
+                    <ul id="links05">
+                        <li><a href="MegaDock.html">MEGADOCK</a></li>
+                        <li><a href="LightDock.html">LightDock</a></li>
+                    </ul>
+                    <input type="checkbox" id="menu_bar06" />
+                    <label for="menu_bar06">その他</label>
+                    <ul id="links06">
+                        <li><a href="CAVER.html">CAVER</a></li>
+                        <li><a href="pdb.html">PDB</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div><!--/.AlphaFold3-contents-->
+
+
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2024 Hibikibox</small></p>
+            </div>
+        </footer>
+
+    </body>
+
+
+</html>
