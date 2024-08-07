@@ -46,13 +46,21 @@
                     必要なもの：<br>
                     ・AutoDock Vina<br>
                     ・AutoDock Tools （AutoDock Vina を使用する際に必要な input ファイル作成支援アプリ (GUI)）<br>
-                    ・Python<br>
+                    ・Pymol などの立体構造解析ソフト<br>
                     <br>
                     まず、AutoDock Vina のホームページから GuitHub ページに移動し、最新版の AutoDock Vina をダウンロード・解凍する。パスを通しておく。<br>
+                    * Mac の場合、チップの種類によってはうまく動作しない場合があるらしい。<br>
                     <code>
                         > vina 
                     </code>
                     で AutoDock Vina が立ち上がる。<br> 
+                    コマンドオプションは<br>
+                    <code>
+                        vina --command
+                    </code>
+                    <br>
+                    の形式<br>
+                    
                     AutoDock Tools は <a href="https://ccsb.scripps.edu/mgltools/downloads/" target="_brank">MGLTools</a> の
                     中に含まれている。 <br>
                     <br>
@@ -64,31 +72,76 @@
                    ドッキングシミュレーションに使用するファイルを準備する。<br>
                     PDB から入手するか、立体構造予測によって作成する。ファイル形式は .pdb とする。<br>
                     <br>
-                    タンパク質ファイルの準備：<br>
-                    PDBファイルを AutoDock Tools で開く。<br>
+                    基本的なタンパク質ファイルの準備方法：<br>
+                    Flexible/Rigid のタンパク質（レセプター）のファイルを作成する<br>
+                    
+                    PDBファイルを AutoDock Tools で開く<br>
                     <code>
-                        color –>  by atom type –> All geometry –> OK<br>
-                        edit –>  Hydrogen –> Add –> All Hydrogens<br>
-                        File –> save –> Write PDB –> OK<br>
-                        Grid –> Macromolecule –> Open<br>
-                        Flexible Residues –> Input –> Open Macromolecule<br>
-                        Flexible Residues –> Choose Torsions in Currently Selected Residues…<br>
-                        Flexible Residues –> Output –> Save Flexible … （protein_flex-part.pdbqtの準備完了）<br>
-                        Flexible Residues –> Output –> Save rigid …（protein_rigid-part.pdbqtの準備完了）<br>
+                        File -> open   #PDBファイルを開く<br>
+                        (color –>  by atom type –> All geometry –> OK)   #必要に応じて<br>
+                        edit –>  Hydrogen –> Add –> All Hydrogens   #水素を付加<br>
+                        File –> save –> Write PDB –> OK   #データを保存する<br>
+                        Grid –> Macromolecule –> Open   #警告は無視してOK. PDBQTファイルとして保存<br>
+                        <br>
+                        Flexible Residues –> Input –> Open Macromolecule   #可動アミノ酸残基を左に表示される表から指定<br>
+                        Flexible Residues –> Choose Torsions in Currently Selected Residues…   #可動アミノ酸残基を確定<br>
+                        Flexible Residues –> Output –> Save Flexible … （protein_flex-part.pdbqtの準備完了）   #Flexible ファイル保存<br>
+                        Flexible Residues –> Output –> Save rigid …（protein_rigid-part.pdbqtの準備完了）   #Rigid ファイル保存<br>
                     </code>
                     <br>
-                    リガンドファイルの準備：<br>
+                    基本的なリガンドファイルの準備方法：<br>
+                    
+                    AutoDock Tools でリガンドファイルを開く<br>
                     <code>
-                        Auto DockTools で Ligand –> Input–> Open<br>
+                        Ligand –> Input–> Open<br>
                         Ligand –> Torsion Tree –> Detect Root<br>
-                        Ligand –> Output –> Save as PDBQT（ligand.pdbqt の準備完了）<br>
+                        Ligand –> Output –> Save as PDBQT   #ligand.pdbqt として保存<br>
                     </code>
+                    <br>
+                    Grid Box 作成：<br>
+                    ドッキングさせたい領域を指定する<br>
+                    <code>
+                        Grid -> Grid Box   #表示されるボックスのサイズを調整<br>
+                    </code>
+                    まず、spacing = 1.000Å に設定　　<br>
+                
+                    結合部位に関する情報がわかっている場合は、Ligand.pdbqt と protein_flex-part.pdbqt を開いて、両方が Grid Box に入るように調整<br>
+                    結合部位に関する情報がない場合は、protein_rigid-part.pdbqt も表示し、全てが Box 内に入るように調整<br>
+                    input file 作成時に使用するため、このとき設定した Grid Box の値を記録しておく<br>
                     
+                    <br>
+                    input file 作成：<br>
+                    ドッキングに使用するファイル等を指定するファイルを作成する<br>
+                    <code>
+                        receptor = receptor_rig.pdbqt   #作成したタンパクの非可動部位のPDBQTファイル<br>
+                        flex = receptor_flex.pdbqt   #作成したタンパク質の可動部位のPDBQTファイル<br>
+                        ligand = ligand.pdbqt   #作成したリガンドのPDBQTファイル<br>
+                        out = output.pdbqt   #outputファイル（指定しなくても output.pdbqt として出力される）<br>
+                        <br>
+                        center_x = 3.775   <br>
+                        center_y = 75.083<br>
+                        center_z = 48.817   #Grid Box で指定した値（上のダイヤルの値）<br>
+                        <br>
+                        size_x = 40<br>
+                        size_y = 40<br>
+                        size_z = 40   #Grid Box で指定した値（下のダイヤルの値）<br>
+                        <br>
+                        cpu = 8<br>
+                        exhaustiveness = 8<br>
+                        num_modes = 20<br>
+                        energy_range = 3<br>
+                    </code>
+                    <br>
+                    <br>
+                    準備が全て終わったら、以下のコマンドを実行<br>
+                    <code>
+                        vina --config input.txt
+                    </code>
+                    <br>
+                    結果が output.pdbqt として出力される<br>
+                    protein_rigid-part.pdbqt と output.pdbqt を PyMOL で開くとドッキング結果を確認できる<br>
                 </p>
-                    
 
-                    
-                </p>
             </article>
 
               
@@ -107,7 +160,7 @@
                     <ul id="links02">
                         <li><a href="Modeller.html">Modeller</a></li>
                         <li><a href="MolDock.html">MolDock</a></li>
-                        <li><a href="Swissplot.html">SwissPlot</a></li>
+                        <li><a href="Swissplot.html">Swissmodel</a></li>
                     </ul>
                     <input type="checkbox" id="menu_bar03" />
                     <label for="menu_bar03">立体構造可視化</label>
@@ -131,6 +184,7 @@
                     <ul id="links06">
                         <li><a href="CAVER.html">CAVER</a></li>
                         <li><a href="pdb.html">PDB</a></li>
+                        <li><a href="Swissplot.html">SwissProt</a></li>
                     </ul>
                 </div>
             </aside>
