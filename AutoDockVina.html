@@ -76,6 +76,7 @@
                     Flexible/Rigid のタンパク質（レセプター）のファイルを作成する<br>
                     
                     PDBファイルを AutoDock Tools で開く<br>
+                    <br>
                     <code>
                         File -> open   #PDBファイルを開く<br>
                         (color –>  by atom type –> All geometry –> OK)   #必要に応じて<br>
@@ -92,6 +93,7 @@
                     基本的なリガンドファイルの準備方法：<br>
                     
                     AutoDock Tools でリガンドファイルを開く<br>
+                        <br>
                     <code>
                         Ligand –> Input–> Open<br>
                         Ligand –> Torsion Tree –> Detect Root<br>
@@ -100,6 +102,7 @@
                     <br>
                     Grid Box 作成：<br>
                     ドッキングさせたい領域を指定する<br>
+                        <br>
                     <code>
                         Grid -> Grid Box   #表示されるボックスのサイズを調整<br>
                     </code>
@@ -112,6 +115,7 @@
                     <br>
                     input file 作成：<br>
                     ドッキングに使用するファイル等を指定するファイルを作成する<br>
+                    <br>
                     <code>
                         receptor = receptor_rig.pdbqt   #作成したタンパクの非可動部位のPDBQTファイル<br>
                         flex = receptor_flex.pdbqt   #作成したタンパク質の可動部位のPDBQTファイル<br>
@@ -134,6 +138,7 @@
                     <br>
                     <br>
                     準備が全て終わったら、以下のコマンドを実行<br>
+                        <br>
                     <code>
                         vina --config input.txt
                     </code>
